@@ -27,8 +27,8 @@ const tiers = [
 export const revalidate = 6000;
 
 export default async function Page() {
-  const result = await getSponsors(owner);
-
+  const result: any[] = [];
+  
   const sponsors = result.map((v) => {
     const entity = organizationAsUserSponsors.find(
       (entity) => entity.asUser === v.login,
